@@ -3,11 +3,11 @@ Download Instrictions:<br>
 1) Create a file with <br>
 `mkdir realtime_chess`<br>
 `cd realtime_chess`
-2) Init the project
+2) Init the project<br>
    `npm init`
-3) Install express
+3) Install express<br>
    `npm install express — save`
-4) Run the code
+4) Run the code<br>
    `node app.js`
 
 
