@@ -1,4 +1,4 @@
-# **Chess version Game**
+# **Chess version Game** for Hitwicket assignment
 Download Instrictions:<br>
 Clone the git using <br>
 `git clone https://github.com/mahatalakshmi/mahataLakshmiUmmadi_21BAI1155.git`
