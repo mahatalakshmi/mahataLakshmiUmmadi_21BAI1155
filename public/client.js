@@ -1,3 +1,4 @@
+// client module we have to handle the moves in the chess board
 var board;
 var game;
 window.onload = function () {
