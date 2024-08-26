@@ -1,3 +1,4 @@
+// calling the server and html file and making a connection using socket.io
 var express = require('express');
 var app = express();
 app.use(express.static('public'));
