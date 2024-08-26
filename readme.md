@@ -84,6 +84,7 @@ Developed a chess geme using the rules given in the assignment.
 5. **Multiplayer Functionality**
    - Play against friends in a real-time multiplayer mode, powered by Socket.IO in JavaScript.
    ![Multiplayer Game](https://github.com/user-attachments/assets/5ba2b1d9-fb31-4ab0-a1a1-8d8478c6aafb)
+Multiplayer funcnality is added using the client server architecture and socket.io
 
 ---
 
