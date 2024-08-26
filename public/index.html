@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    
+<head>
+<title>Realtime-Chess</title>
+<link rel="stylesheet" href="lib/chessboard-0.3.0.min.css">
+<script src="/socket.io/socket.io.js"></script>
+</head>
+<style>
+    body {
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    #gameBoard {
+     width: 60%;
+    }
+</style>
+<script>
+    var board = null;
+    var game = new Chess(); 
+
+    function onMoveEnd() {
+      if (game.in_checkmate()) {
+        document.getElementById('winner').innerText = 'Checkmate! ' + (game.turn() === 'w' ? 'Black' : 'White') + ' wins!';
+      } else if (game.in_draw() || game.in_stalemate() || game.in_threefold_repetition()) {
+        document.getElementById('winner').innerText = 'Draw!';
+      } else if (noMoreMovesPossible()) {
+        document.getElementById('winner').innerText = (game.turn() === 'w' ? 'Black' : 'White') + ' wins by default!';
+      }
+    }
+
+    function noMoreMovesPossible() {
+      var possibleMoves = game.moves();
+      return possibleMoves.length === 0;
+    }
+
+    board = ChessBoard('board-container', {
+      draggable: true,
+      position: 'start',
+      onDrop: function(source, target) {
+        var move = game.move({
+          from: source,
+          to: target,
+          promotion: 'q'
+        });
+
+        if (move === null) return 'snapback';
+
+        onMoveEnd();
+      }
+    });
+  </script>
+<body>
+<div id='gameBoard'></div>
+<script src="lib/chess.min.js"></script>
+<script src="lib/chessboard-0.3.0.min.js"></script>
+<script src="lib/jquery-1.11.1.js"></script>
+<script src="/client.js"></script>
+</body>
+</html>
