@@ -44,3 +44,16 @@
     top: 2px;
     left: 2px;
   }
+  #notation{
+    padding-right: 20px;
+    padding-bottom: 500px;
+
+  }
+  ul {
+    list-style-type: none; /* You can use 'disc', 'circle', 'square', or 'none' */
+    margin: 20px;
+    padding: 20px;
+}
+li {
+    margin-bottom: 10px;
+}

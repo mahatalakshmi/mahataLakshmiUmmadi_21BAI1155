@@ -14,10 +14,37 @@
     justify-content: center;
     }
     #gameBoard {
-     width: 60%;
+     width: 40%;
     }
+
+
+    .invisible-button {
+            background-color: transparent; /* Makes the background transparent */
+            border: none;                  /* Removes the border */
+            color: transparent;            
+        }
+        .restart-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .restart-button:hover {
+            background-color: #0056b3;
+        }
 </style>
 <script>
+    function restartPage() {
+            location.reload(); // Reloads the current page
+        }
+        // JavaScript function to show alert
+        function showWinnerAlert() {
+            alert("White won!");
+        }
+    
     var board = null;
     var game = new Chess(); 
 
@@ -53,6 +80,21 @@
     });
   </script>
 <body>
+
+    <button class="restart-button" onclick="restartPage()">Restart</button>
+
+    <ul>
+        <li><h1>Blacks's Turn</h1></li>
+        <li><h1>Chess Piece Notations</h1></li>
+        <li><b>W</b>  represent White</li>
+        <li><b>B</b> represent Black</li>
+        <li><b>Q</b> represent Queen</li>
+        <li><b>R </b> represent Rook</li>
+        <li><b>K </b> represent King</li>
+        <li><b>B</b> represent Bishop</li>
+        <li><b>P</b> represent Pawn</li>
+    </ul>
+
 <div id='gameBoard'></div>
 <script src="lib/chess.min.js"></script>
 <script src="lib/chessboard-0.3.0.min.js"></script>
